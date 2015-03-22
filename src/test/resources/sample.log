@@ -1,0 +1,1912 @@
+Jun 29, 2008 11:16:20 AM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+Jun 29, 2008 11:16:20 AM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+Jun 29, 2008 11:22:43 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: /testmysql.jsp(3,4) Invalid directive
+	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:40)
+	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:407)
+	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:88)
+	at org.apache.jasper.compiler.Parser.parseDirective(Parser.java:506)
+	at org.apache.jasper.compiler.Parser.parseElements(Parser.java:1433)
+	at org.apache.jasper.compiler.Parser.parse(Parser.java:133)
+	at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:216)
+	at org.apache.jasper.compiler.ParserController.parse(ParserController.java:103)
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:153)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:314)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:23:02 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 13 in the jsp file: /testmysql.jsp
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+10: Connection dbconn;
+11: ResultSet results;
+12: PreparedStatement sql;
+13: TRY
+14: {
+15: 	Class.forname("com.mysql.jdbc.Driver").newInstance();
+16: 	TRY
+
+
+An error occurred at line: 13 in the jsp file: /testmysql.jsp
+Syntax error, insert ";" to complete Statement
+10: Connection dbconn;
+11: ResultSet results;
+12: PreparedStatement sql;
+13: TRY
+14: {
+15: 	Class.forname("com.mysql.jdbc.Driver").newInstance();
+16: 	TRY
+
+
+An error occurred at line: 13 in the jsp file: /testmysql.jsp
+TRY cannot be resolved
+10: Connection dbconn;
+11: ResultSet results;
+12: PreparedStatement sql;
+13: TRY
+14: {
+15: 	Class.forname("com.mysql.jdbc.Driver").newInstance();
+16: 	TRY
+
+
+An error occurred at line: 15 in the jsp file: /testmysql.jsp
+The method forname(String) is undefined for the type Class
+12: PreparedStatement sql;
+13: TRY
+14: {
+15: 	Class.forname("com.mysql.jdbc.Driver").newInstance();
+16: 	TRY
+17: 	{
+18: 		dbconn = DriverManager.getConnection("jdbc:mysql://localhost/visitor","","");
+
+
+An error occurred at line: 16 in the jsp file: /testmysql.jsp
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+13: TRY
+14: {
+15: 	Class.forname("com.mysql.jdbc.Driver").newInstance();
+16: 	TRY
+17: 	{
+18: 		dbconn = DriverManager.getConnection("jdbc:mysql://localhost/visitor","","");
+19: 		uid = request.getParameter("userid");
+
+
+An error occurred at line: 16 in the jsp file: /testmysql.jsp
+Syntax error, insert ";" to complete Statement
+13: TRY
+14: {
+15: 	Class.forname("com.mysql.jdbc.Driver").newInstance();
+16: 	TRY
+17: 	{
+18: 		dbconn = DriverManager.getConnection("jdbc:mysql://localhost/visitor","","");
+19: 		uid = request.getParameter("userid");
+
+
+An error occurred at line: 16 in the jsp file: /testmysql.jsp
+TRY cannot be resolved
+13: TRY
+14: {
+15: 	Class.forname("com.mysql.jdbc.Driver").newInstance();
+16: 	TRY
+17: 	{
+18: 		dbconn = DriverManager.getConnection("jdbc:mysql://localhost/visitor","","");
+19: 		uid = request.getParameter("userid");
+
+
+An error occurred at line: 24 in the jsp file: /testmysql.jsp
+Password cannot be resolved
+21: 		sql = dbconn.prepareStatement("SELECT Password FROM login WHERE UseiId = '" + uid + "'");
+22: 
+23: 		results = sql.executeQuery();
+24: 		dpwd = results.getString(Password);
+25: 
+26: 		if(upwd==dpwd)
+27: 		{
+
+
+An error occurred at line: 34 in the jsp file: /testmysql.jsp
+Syntax error, insert "}" to complete Block
+31: 		{
+32: 			out.println("Invalid Username or Password");
+33: 		}
+34: 	}
+35: 	catch (SQLException s)
+36: 	{
+37: 		out.println("SQL Error<br>");
+
+
+An error occurred at line: 34 in the jsp file: /testmysql.jsp
+Syntax error, insert "}" to complete Block
+31: 		{
+32: 			out.println("Invalid Username or Password");
+33: 		}
+34: 	}
+35: 	catch (SQLException s)
+36: 	{
+37: 		out.println("SQL Error<br>");
+
+
+An error occurred at line: 39 in the jsp file: /testmysql.jsp
+Syntax error on token "}", delete this token
+36: 	{
+37: 		out.println("SQL Error<br>");
+38: 	}
+39: }
+40: catch (ClassNotFoundException err)
+41: {
+42: 	out.println("Class loading error");
+
+
+An error occurred at line: 103 in the generated java file
+Syntax error on tokens, delete these tokens
+
+An error occurred at line: 104 in the generated java file
+t cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+t cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+Syntax error on token "finally", delete this token
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:23:30 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 15 in the jsp file: /testmysql.jsp
+The method forname(String) is undefined for the type Class
+12: PreparedStatement sql;
+13: try
+14: {
+15: 	Class.forname("com.mysql.jdbc.Driver").newInstance();
+16: 	try
+17: 	{
+18: 		dbconn = DriverManager.getConnection("jdbc:mysql://localhost/visitor","","");
+
+
+An error occurred at line: 24 in the jsp file: /testmysql.jsp
+Password cannot be resolved
+21: 		sql = dbconn.prepareStatement("SELECT Password FROM login WHERE UseiId = '" + uid + "'");
+22: 
+23: 		results = sql.executeQuery();
+24: 		dpwd = results.getString(Password);
+25: 
+26: 		if(upwd==dpwd)
+27: 		{
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:33:32 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 15 in the jsp file: /testmysql.jsp
+The method forname(String) is undefined for the type Class
+12: PreparedStatement sql;
+13: try
+14: {
+15: 	Class.forname("com.mysql.jdbc.Driver").newInstance();
+16: 	try
+17: 	{
+18: 		dbconn = DriverManager.getConnection("jdbc:mysql://localhost/foodmart","root","");
+
+
+An error occurred at line: 24 in the jsp file: /testmysql.jsp
+Password cannot be resolved
+21: 		sql = dbconn.prepareStatement("show tables;");
+22: 
+23: 		results = sql.executeQuery();
+24: 		dpwd = results.getString(Password);
+25: 
+26: 		if(upwd==dpwd)
+27: 		{
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:33:54 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 24 in the jsp file: /testmysql.jsp
+Password cannot be resolved
+21: 		sql = dbconn.prepareStatement("show tables;");
+22: 
+23: 		results = sql.executeQuery();
+24: 		dpwd = results.getString(Password);
+25: 
+26: 		if(upwd==dpwd)
+27: 		{
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:34:24 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 24 in the jsp file: /testmysql.jsp
+Password cannot be resolved
+21: 		sql = dbconn.prepareStatement("show tables");
+22: 
+23: 		results = sql.executeQuery();
+24: 		dpwd = results.getString(Password);
+25: 
+26: 		if(upwd==dpwd)
+27: 		{
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:45:40 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 28 in the jsp file: /testmysql.jsp
+Syntax error, insert "}" to complete Block
+25: 		while(rs.next()) {
+26: 			String strtable = rs.getString("Tables_in_foodmart");
+27: 			System.out.printf("Table : %s ", strtable);
+28: 		} catch (SQLException ex) {
+29: 		    ex.printStackTrace();
+30: 		    try { c.close(); } catch (SQLException e) { }
+31: 		} finally {
+
+
+An error occurred at line: 30 in the jsp file: /testmysql.jsp
+c cannot be resolved
+27: 			System.out.printf("Table : %s ", strtable);
+28: 		} catch (SQLException ex) {
+29: 		    ex.printStackTrace();
+30: 		    try { c.close(); } catch (SQLException e) { }
+31: 		} finally {
+32: 		    // properly release our connection
+33: 		    DataSourceUtils.releaseConnection(c, ds);
+
+
+An error occurred at line: 33 in the jsp file: /testmysql.jsp
+DataSourceUtils cannot be resolved
+30: 		    try { c.close(); } catch (SQLException e) { }
+31: 		} finally {
+32: 		    // properly release our connection
+33: 		    DataSourceUtils.releaseConnection(c, ds);
+34: 		}
+35: 	}
+36: 	catch (SQLException s)
+
+
+An error occurred at line: 33 in the jsp file: /testmysql.jsp
+c cannot be resolved
+30: 		    try { c.close(); } catch (SQLException e) { }
+31: 		} finally {
+32: 		    // properly release our connection
+33: 		    DataSourceUtils.releaseConnection(c, ds);
+34: 		}
+35: 	}
+36: 	catch (SQLException s)
+
+
+An error occurred at line: 33 in the jsp file: /testmysql.jsp
+ds cannot be resolved
+30: 		    try { c.close(); } catch (SQLException e) { }
+31: 		} finally {
+32: 		    // properly release our connection
+33: 		    DataSourceUtils.releaseConnection(c, ds);
+34: 		}
+35: 	}
+36: 	catch (SQLException s)
+
+
+An error occurred at line: 104 in the generated java file
+Syntax error on tokens, delete these tokens
+
+An error occurred at line: 105 in the generated java file
+t cannot be resolved
+
+An error occurred at line: 109 in the generated java file
+t cannot be resolved
+
+An error occurred at line: 111 in the generated java file
+Syntax error on token "finally", delete this token
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:46:10 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 31 in the jsp file: /testmysql.jsp
+c cannot be resolved
+28: 			}
+29: 		} catch (SQLException ex) {
+30: 		    ex.printStackTrace();
+31: 		    try { c.close(); } catch (SQLException e) { }
+32: 		} finally {
+33: 		    // properly release our connection
+34: 		    DataSourceUtils.releaseConnection(c, ds);
+
+
+An error occurred at line: 34 in the jsp file: /testmysql.jsp
+DataSourceUtils cannot be resolved
+31: 		    try { c.close(); } catch (SQLException e) { }
+32: 		} finally {
+33: 		    // properly release our connection
+34: 		    DataSourceUtils.releaseConnection(c, ds);
+35: 		}
+36: 	}
+37: 	catch (SQLException s)
+
+
+An error occurred at line: 34 in the jsp file: /testmysql.jsp
+c cannot be resolved
+31: 		    try { c.close(); } catch (SQLException e) { }
+32: 		} finally {
+33: 		    // properly release our connection
+34: 		    DataSourceUtils.releaseConnection(c, ds);
+35: 		}
+36: 	}
+37: 	catch (SQLException s)
+
+
+An error occurred at line: 34 in the jsp file: /testmysql.jsp
+ds cannot be resolved
+31: 		    try { c.close(); } catch (SQLException e) { }
+32: 		} finally {
+33: 		    // properly release our connection
+34: 		    DataSourceUtils.releaseConnection(c, ds);
+35: 		}
+36: 	}
+37: 	catch (SQLException s)
+
+
+An error occurred at line: 105 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 107 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 107 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 109 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 112 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 113 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:46:30 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 21 in the jsp file: /testmysql.jsp
+dbconn cannot be resolved
+18: 		{
+19: 			c = DriverManager.getConnection("jdbc:mysql://localhost/foodmart","root","");
+20: 
+21: 			ps = dbconn.prepareStatement("show tables");
+22: 
+23: 			rs = ps.executeQuery();
+24: 		
+
+
+An error occurred at line: 34 in the jsp file: /testmysql.jsp
+DataSourceUtils cannot be resolved
+31: 		    try { c.close(); } catch (SQLException e) { }
+32: 		} finally {
+33: 		    // properly release our connection
+34: 		    DataSourceUtils.releaseConnection(c, ds);
+35: 		}
+36: 	}
+37: 	catch (SQLException s)
+
+
+An error occurred at line: 34 in the jsp file: /testmysql.jsp
+ds cannot be resolved
+31: 		    try { c.close(); } catch (SQLException e) { }
+32: 		} finally {
+33: 		    // properly release our connection
+34: 		    DataSourceUtils.releaseConnection(c, ds);
+35: 		}
+36: 	}
+37: 	catch (SQLException s)
+
+
+An error occurred at line: 105 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 107 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 107 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 109 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 112 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 113 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:46:39 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 34 in the jsp file: /testmysql.jsp
+DataSourceUtils cannot be resolved
+31: 		    try { c.close(); } catch (SQLException e) { }
+32: 		} finally {
+33: 		    // properly release our connection
+34: 		    DataSourceUtils.releaseConnection(c, ds);
+35: 		}
+36: 	}
+37: 	catch (SQLException s)
+
+
+An error occurred at line: 34 in the jsp file: /testmysql.jsp
+ds cannot be resolved
+31: 		    try { c.close(); } catch (SQLException e) { }
+32: 		} finally {
+33: 		    // properly release our connection
+34: 		    DataSourceUtils.releaseConnection(c, ds);
+35: 		}
+36: 	}
+37: 	catch (SQLException s)
+
+
+An error occurred at line: 105 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 107 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 107 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 109 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 112 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 113 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:47:25 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 103 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 105 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 105 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 107 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 111 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:47:51 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 103 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 105 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 105 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 107 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 111 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:48:40 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 103 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 105 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 105 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 107 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 111 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:48:54 AM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+Jun 29, 2008 11:48:54 AM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+Jun 29, 2008 11:49:06 AM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+Jun 29, 2008 11:49:06 AM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+Jun 29, 2008 11:49:12 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 103 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 105 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 105 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 107 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 111 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:49:13 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.ClassNotFoundException: org.apache.jsp.testmysql_jsp
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:200)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:188)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:134)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:66)
+	at org.apache.jasper.JspCompilationContext.load(JspCompilationContext.java:598)
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:144)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:329)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:49:16 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 103 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 105 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 105 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 107 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 111 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:49:17 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.ClassNotFoundException: org.apache.jsp.testmysql_jsp
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:200)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:188)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:134)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:66)
+	at org.apache.jasper.JspCompilationContext.load(JspCompilationContext.java:598)
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:144)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:329)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:49:46 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 103 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 105 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 105 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 107 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 111 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:53:10 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 103 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 105 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 105 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 107 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 111 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:56:14 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 103 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 105 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 105 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 106 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 107 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 108 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 110 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 111 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:57:37 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 24 in the jsp file: /testmysql.jsp
+Syntax error on token "}", ; expected
+21: 
+22: 	while(rst.next()){
+23: 		out.println(rst.getString(1))
+24: 	}
+25: }
+26: rst.close();
+27: stmt.close();
+
+
+An error occurred at line: 32 in the jsp file: /testmysql.jsp
+Syntax error, insert "}" to complete Block
+29: }catch(Exception e){
+30: System.out.println(e.getMessage());
+31: }
+32: %>
+33: 
+34: </tbody>
+35: </table>
+
+
+An error occurred at line: 32 in the jsp file: /testmysql.jsp
+Syntax error, insert "Finally" to complete TryStatement
+29: }catch(Exception e){
+30: System.out.println(e.getMessage());
+31: }
+32: %>
+33: 
+34: </tbody>
+35: </table>
+
+
+An error occurred at line: 96 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 98 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 98 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 99 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 99 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 100 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 101 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 101 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 103 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 104 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:57:48 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 25 in the jsp file: /testmysql.jsp
+Syntax error, insert "Finally" to complete TryStatement
+22: 	while(rst.next()){
+23: 		out.println(rst.getString(1));
+24: 	}
+25: }
+26: rst.close();
+27: stmt.close();
+28: con.close();
+
+
+An error occurred at line: 96 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 98 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 98 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 99 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 99 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 100 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 101 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 101 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 103 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 104 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 11:58:13 AM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 25 in the jsp file: /testmysql.jsp
+Syntax error, insert "Finally" to complete TryStatement
+22: 		while(rst.next()){
+23: 			out.println(rst.getString(1));
+24: 		}
+25: 	}
+26: 	rst.close();
+27: 	stmt.close();
+28: 	con.close();
+
+
+An error occurred at line: 91 in the generated java file
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: 93 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 93 in the generated java file
+_jspx_out cannot be resolved
+
+An error occurred at line: 94 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 94 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 95 in the generated java file
+out cannot be resolved
+
+An error occurred at line: 96 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 96 in the generated java file
+_jspx_page_context cannot be resolved
+
+An error occurred at line: 98 in the generated java file
+Syntax error on token "finally", { expected
+
+An error occurred at line: 99 in the generated java file
+_jspx_page_context cannot be resolved
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 12:03:51 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.io.FileNotFoundException: C:\apache-tomcat-6.0.16\work\Catalina\localhost\mondrian\org\apache\jsp\showtables_jsp.java (Access is denied)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:70)
+	at org.apache.jasper.compiler.Compiler.setupContextWriter(Compiler.java:258)
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:197)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:314)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 12:08:19 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 24 in the jsp file: /showtables.jsp
+Cannot instantiate the type ResultSet
+21: 	rs=stmt.executeQuery("show tables");
+22: 
+23: 	while(rs.next()){
+24: 		rs2 = new ResultSet();
+25: 		rs2 = stmt.executeQuery("select count(*) as total from " + rs.getString(1));
+26: 		out.println(rs.getString(1) + "(" + rs2.getString(1) + ")<BR>");
+27: 		rs2.close();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 12:10:02 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 35 in the jsp file: /showtables.jsp
+The method printStackTrace(PrintStream) in the type Throwable is not applicable for the arguments (JspWriter)
+32: 	stmt.close();
+33: 	con.close();
+34: }catch(Exception e){
+35: 	out.println(e.printStackTrace(out));
+36: }
+37: %>
+38: </BODY>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 12:10:13 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 35 in the jsp file: /showtables.jsp
+The method println(boolean) in the type JspWriter is not applicable for the arguments (void)
+32: 	stmt.close();
+33: 	con.close();
+34: }catch(Exception e){
+35: 	out.println(e.printStackTrace());
+36: }
+37: %>
+38: </BODY>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 12:13:27 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 26 in the jsp file: /showtables.jsp
+The left-hand side of an assignment must be a variable
+23: 
+24: 	while(rs.next()){
+25: 		stmt2  = con.createStatement();
+26: 		out.println("Select count(*) as total from " + rs.getString(1)) + ";";
+27: 		rs2 = stmt2.executeQuery("Select count(*) as total from " + rs.getString(1) + ";");
+28: 		out.println(rs.getString(1) + "(" + rs2.getString(1) + ")<BR>");
+29: 		out.println(rs.getString(1) + "<BR>");
+
+
+An error occurred at line: 26 in the jsp file: /showtables.jsp
+Syntax error on token "+", invalid AssignmentOperator
+23: 
+24: 	while(rs.next()){
+25: 		stmt2  = con.createStatement();
+26: 		out.println("Select count(*) as total from " + rs.getString(1)) + ";";
+27: 		rs2 = stmt2.executeQuery("Select count(*) as total from " + rs.getString(1) + ";");
+28: 		out.println(rs.getString(1) + "(" + rs2.getString(1) + ")<BR>");
+29: 		out.println(rs.getString(1) + "<BR>");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 12:14:07 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 28 in the jsp file: /showtables.jsp
+The method getInteger(int) is undefined for the type ResultSet
+25: 		stmt2  = con.createStatement();
+26: 		out.println("Select count(*) as total from " + rs.getString(1) + ";") ;
+27: 		rs2 = stmt2.executeQuery("Select count(*) as total from " + rs.getString(1) + ";");
+28: 		out.println(rs.getString(1) + "(" + rs2.getInteger(1) + ")<BR>");
+29: 		out.println(rs.getString(1) + "<BR>");
+30: 		rs2.close();
+31: 		stmt2.close();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 12:23:42 PM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+Jun 29, 2008 12:23:42 PM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+Jun 29, 2008 12:30:09 PM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+Jun 29, 2008 12:30:09 PM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+Jun 29, 2008 12:36:48 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 27 in the jsp file: /showtables.jsp
+rs2 cannot be resolved
+24: 	while(rs.next()){
+25: 		out.println("Select count(*) as total from " + rs.getString(1) + ";") ;
+26: 		//ResultSet rs2=null;
+27: 		rs2 = stmt2.executeQuery("Select count(*) as total from " + rs.getString(1) + ";");
+28: 		if(rs2.next())
+29: 		{
+30: 			out.println(rs.getString(1));
+
+
+An error occurred at line: 28 in the jsp file: /showtables.jsp
+rs2 cannot be resolved
+25: 		out.println("Select count(*) as total from " + rs.getString(1) + ";") ;
+26: 		//ResultSet rs2=null;
+27: 		rs2 = stmt2.executeQuery("Select count(*) as total from " + rs.getString(1) + ";");
+28: 		if(rs2.next())
+29: 		{
+30: 			out.println(rs.getString(1));
+31: 			out.println("(" + rs2.getString(1) + ")<BR>");
+
+
+An error occurred at line: 31 in the jsp file: /showtables.jsp
+rs2 cannot be resolved
+28: 		if(rs2.next())
+29: 		{
+30: 			out.println(rs.getString(1));
+31: 			out.println("(" + rs2.getString(1) + ")<BR>");
+32: 		}
+33: 		rs2.close();
+34: 	}
+
+
+An error occurred at line: 33 in the jsp file: /showtables.jsp
+rs2 cannot be resolved
+30: 			out.println(rs.getString(1));
+31: 			out.println("(" + rs2.getString(1) + ")<BR>");
+32: 		}
+33: 		rs2.close();
+34: 	}
+35: 	rs.close();
+36: 	stmt.close();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 12:36:51 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.ClassNotFoundException: org.apache.jsp.showtables_jsp
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:200)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:188)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:134)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:66)
+	at org.apache.jasper.JspCompilationContext.load(JspCompilationContext.java:598)
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:144)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:329)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 12:36:54 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 27 in the jsp file: /showtables.jsp
+rs2 cannot be resolved
+24: 	while(rs.next()){
+25: 		out.println("Select count(*) as total from " + rs.getString(1) + ";") ;
+26: 		//ResultSet rs2=null;
+27: 		rs2 = stmt2.executeQuery("Select count(*) as total from " + rs.getString(1) + ";");
+28: 		if(rs2.next())
+29: 		{
+30: 			out.println(rs.getString(1));
+
+
+An error occurred at line: 28 in the jsp file: /showtables.jsp
+rs2 cannot be resolved
+25: 		out.println("Select count(*) as total from " + rs.getString(1) + ";") ;
+26: 		//ResultSet rs2=null;
+27: 		rs2 = stmt2.executeQuery("Select count(*) as total from " + rs.getString(1) + ";");
+28: 		if(rs2.next())
+29: 		{
+30: 			out.println(rs.getString(1));
+31: 			out.println("(" + rs2.getString(1) + ")<BR>");
+
+
+An error occurred at line: 31 in the jsp file: /showtables.jsp
+rs2 cannot be resolved
+28: 		if(rs2.next())
+29: 		{
+30: 			out.println(rs.getString(1));
+31: 			out.println("(" + rs2.getString(1) + ")<BR>");
+32: 		}
+33: 		rs2.close();
+34: 	}
+
+
+An error occurred at line: 33 in the jsp file: /showtables.jsp
+rs2 cannot be resolved
+30: 			out.println(rs.getString(1));
+31: 			out.println("(" + rs2.getString(1) + ")<BR>");
+32: 		}
+33: 		rs2.close();
+34: 	}
+35: 	rs.close();
+36: 	stmt.close();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:423)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:316)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:294)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:281)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:566)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:317)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:337)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:266)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:803)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:286)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+Jun 29, 2008 1:26:34 PM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+Jun 29, 2008 1:26:34 PM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
