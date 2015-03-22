@@ -15,39 +15,23 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 public class IndexerTest {
 
     @Test
     public void testIndexData() throws Exception {
 
-        StandardAnalyzer analyzer = new StandardAnalyzer();
-
         Indexer indexer = Indexer.create("luceneIndex");
         addTestData(indexer);
 
-        String query = "error";
+        SimpleSearch simpleSearch = new SimpleSearch(indexer.getDirectory());
 
-        Query q = new QueryParser(Indexer.LOG_LINE_TOKEN,analyzer).parse(query);
+        List<String> results = simpleSearch.search("exception");
 
-        IndexReader reader = DirectoryReader.open(indexer.getDirectory());
-
-        IndexSearcher searcher = new IndexSearcher(reader);
-
-        TopScoreDocCollector collector = TopScoreDocCollector.create(50, true);
-        searcher.search(q, collector);
-        ScoreDoc[] hits = collector.topDocs().scoreDocs;
-        System.out.println("Indexing done!");
-
-
-        System.out.println("Found " + hits.length + " hits.");
-
-        for(int i=0;i<hits.length;++i) {
-            int docId = hits[i].doc;
-            Document d = searcher.doc(docId);
-            System.out.println(d.get(Indexer.LOG_LINE_NUMBER_TOKEN)+","+ d.get(Indexer.LOG_LINE_TOKEN) );
+        for(String result : results){
+            System.out.println(result);
         }
-
 
     }
 

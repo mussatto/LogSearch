@@ -23,26 +23,6 @@ public class Indexer {
 
     private long currentLogLineNumber;
 
-    enum TOKENS{
-        LOG_LINE_TOKEN("log_line"),
-        LOG_LINE_NUMBER_TOKEN("log_line_number"),
-        FILENAME_TOKEN("log_line_number");
-
-        private String tokenName;
-
-        private TOKENS(String tokenName){
-            this.tokenName=tokenName;
-        }
-
-        @Override
-        public String toString(){
-            return tokenName;
-        }
-    }
-    public static final String LOG_LINE_TOKEN="log_line";
-    public static final String LOG_LINE_NUMBER_TOKEN="log_line_number";
-    public static final String FILENAME_TOKEN="log_line_number";
-
     public static Indexer create(String indexPath){
 
         return new Indexer(indexPath);
@@ -68,9 +48,9 @@ public class Indexer {
         }
 
         Document document = new Document();
-        document.add(new TextField(LOG_LINE_TOKEN, logLine, Field.Store.YES));
-        document.add(new LongField(LOG_LINE_NUMBER_TOKEN, ++currentLogLineNumber, Field.Store.YES));
-        document.add(new TextField(FILENAME_TOKEN, fileName, Field.Store.YES));
+        document.add(new TextField(TOKENS.LOG_LINE_TOKEN.toString(), logLine, Field.Store.YES));
+        document.add(new LongField(TOKENS.LOG_LINE_NUMBER_TOKEN.toString(), ++currentLogLineNumber, Field.Store.YES));
+        document.add(new TextField(TOKENS.FILENAME_TOKEN.toString(), fileName, Field.Store.YES));
         this.writer.addDocument(document);
         this.writer.commit();
     }

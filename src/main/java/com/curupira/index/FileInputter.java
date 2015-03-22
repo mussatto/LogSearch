@@ -11,7 +11,7 @@ public class FileInputter {
     private Indexer indexer;
     private String path;
 
-    public FileInputter(Indexer indexer,String path) throws FileNotFoundException {
+    public FileInputter(Indexer indexer, String path) throws FileNotFoundException {
         this.bufferedReader = new BufferedReader(new FileReader(path));
         this.indexer=indexer;
         this.path = path;
