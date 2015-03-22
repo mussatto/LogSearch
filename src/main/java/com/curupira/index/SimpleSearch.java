@@ -18,7 +18,7 @@ import java.util.List;
 
 public class SimpleSearch {
 
-    private IndexReader reader;
+    //private IndexReader reader;
 
     private IndexSearcher indexSearcher;
 
@@ -26,7 +26,7 @@ public class SimpleSearch {
 
     public SimpleSearch(Directory directory) throws IOException {
 
-        this.reader = DirectoryReader.open(directory);
+        IndexReader reader = DirectoryReader.open(directory);
 
         this.indexSearcher = new IndexSearcher(reader);
 

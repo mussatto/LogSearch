@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class Indexer {
 
-    private String indexPath;
+    private final String indexPath;
 
     private IndexWriter writer;
 
@@ -68,6 +68,8 @@ public class Indexer {
     public void close() throws IOException {
         if(writer!=null)
             this.writer.close();
+
+
     }
 
     public Directory getDirectory(){

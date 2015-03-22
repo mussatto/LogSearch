@@ -5,7 +5,7 @@ public enum TOKENS {
     LOG_LINE_NUMBER_TOKEN("log_line_number"),
     FILENAME_TOKEN("filename");
 
-    private String tokenName;
+    private final String tokenName;
 
     private TOKENS(String tokenName){
         this.tokenName=tokenName;

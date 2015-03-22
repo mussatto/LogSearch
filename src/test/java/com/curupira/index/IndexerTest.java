@@ -1,16 +1,5 @@
 package com.curupira.index;
 
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.index.DirectoryReader;
-import org.apache.lucene.index.IndexReader;
-import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.Query;
-import org.apache.lucene.search.ScoreDoc;
-import org.apache.lucene.search.TopScoreDocCollector;
-import org.apache.lucene.util.Version;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -36,8 +25,10 @@ public class IndexerTest {
     }
 
     private void addTestData(Indexer indexer) throws IOException {
+        java.net.URL url = this.getClass().getResource("/sample.log");
         long start = new Date().getTime();
-        FileInputter fileInputter = new FileInputter(indexer, "resources/sample.log");
+        System.out.println("Loading file:"+url.getFile());
+        FileInputter fileInputter = new FileInputter(indexer, url.getPath());
 
         fileInputter.feedToIndex();
 
