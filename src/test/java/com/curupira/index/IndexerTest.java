@@ -53,7 +53,7 @@ public class IndexerTest {
 
     private void addTestData(Indexer indexer) throws IOException {
         long start = new Date().getTime();
-        FileInputter fileInputter = new FileInputter(indexer, "/Users/vitormussatto/dev/sources/github/LogSearch/src/test/resources/sample.log");
+        FileInputter fileInputter = new FileInputter(indexer, "resources/sample.log");
 
         fileInputter.feedToIndex();
 
