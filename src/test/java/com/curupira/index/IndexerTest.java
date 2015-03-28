@@ -4,24 +4,56 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.List;
 
 public class IndexerTest {
 
     @Test
-    public void testIndexData() throws Exception {
+    public void testIndexDataMemory() throws Exception {
 
-        Indexer indexer = Indexer.create("luceneIndex");
+        Indexer indexer = Indexer.createInMemory("luceneIndex");
         addTestData(indexer);
 
         SimpleSearch simpleSearch = new SimpleSearch(indexer.getDirectory());
 
-        List<String> results = simpleSearch.search("exception");
+        String[] results = simpleSearch.searchString("exception");
 
         for(String result : results){
             System.out.println(result);
         }
 
+    }
+
+    @Test
+    public void testIndexDataFileSystem() throws Exception {
+
+        Indexer indexer = Indexer.createInFileSystemExisting("luceneIndex.index");
+        addTestData(indexer);
+
+        SimpleSearch simpleSearch = new SimpleSearch(indexer.getDirectory());
+
+        String[] results = simpleSearch.searchString("exception");
+
+        for(String result : results){
+            System.out.println(result);
+        }
+
+        indexer.close();
+
+    }
+
+    @Test
+    public void testIndexFileSystemExisting() throws Exception{
+        Indexer indexer = Indexer.createInFileSystemExisting("luceneIndex.index");
+
+        SimpleSearch simpleSearch = new SimpleSearch(indexer.getDirectory());
+
+        String[] results = simpleSearch.searchString("exception");
+
+        for(String result : results){
+            System.out.println(result);
+        }
+
+        indexer.close();
     }
 
     private void addTestData(Indexer indexer) throws IOException {

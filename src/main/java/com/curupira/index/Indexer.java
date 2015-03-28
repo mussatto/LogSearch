@@ -1,37 +1,38 @@
 package com.curupira.index;
 
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.LongField;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
-import org.apache.lucene.store.RAMDirectory;
-import org.apache.lucene.util.Version;
 
 import java.io.IOException;
 
-public class Indexer {
+public abstract class Indexer {
 
-    private final String indexPath;
+    protected final String indexPath;
 
-    private IndexWriter writer;
+    protected IndexWriter writer;
 
-    private Directory directory;
+    protected Directory directory;
 
-    private long currentLogLineNumber;
+    protected long currentLogLineNumber;
 
-    public static Indexer create(String indexPath){
 
-        return new Indexer(indexPath);
+    public static Indexer createInFileSystemExisting(String indexPath){
+        return new FSIndexer(indexPath);
     }
 
-    private Indexer(String path){
+    public static Indexer createInMemory(String indexPath){
+
+        return new RAMIndexer(indexPath);
+    }
+
+    public Indexer(String path){
         this.indexPath=path;
         try {
-            createIndex();
+            createIndex(indexPath);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,7 +42,7 @@ public class Indexer {
     public void indexLogLine(String logLine, String fileName) throws IOException {
         if(writer==null) {
             if (indexPath != null){
-                createIndex();
+                createIndex(indexPath);
             }else{
                 return;
             }
@@ -55,21 +56,11 @@ public class Indexer {
         this.writer.commit();
     }
 
-    private void createIndex() throws IOException {
-        StandardAnalyzer analyzer = new StandardAnalyzer();
-        Directory directory = new RAMDirectory();
-
-        IndexWriterConfig indexWriterConfig = new IndexWriterConfig(Version.LUCENE_4_10_4, analyzer);
-        this.directory = directory;
-        this.writer = new IndexWriter(directory, indexWriterConfig);
-
-    }
+    abstract void createIndex(String indexPath) throws IOException;
 
     public void close() throws IOException {
         if(writer!=null)
             this.writer.close();
-
-
     }
 
     public Directory getDirectory(){

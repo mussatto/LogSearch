@@ -13,8 +13,6 @@ import org.apache.lucene.search.TopScoreDocCollector;
 import org.apache.lucene.store.Directory;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SimpleSearch {
 
@@ -34,7 +32,7 @@ public class SimpleSearch {
 
     }
 
-    public List<String> search(String queryString) throws ParseException, IOException {
+    public ScoreDoc[] search(String queryString) throws ParseException, IOException {
         StandardAnalyzer analyzer = new StandardAnalyzer();
 
         Query query = new QueryParser(TOKENS.LOG_LINE_TOKEN.toString(),analyzer)
@@ -42,20 +40,26 @@ public class SimpleSearch {
 
         indexSearcher.search(query, collector);
 
-        ScoreDoc[] hits = collector.topDocs().scoreDocs;
+        return collector.topDocs().scoreDocs;
+    }
 
-        System.out.println("Found " + hits.length + " hits.");
+    public String[] searchString(String queryString) throws ParseException, IOException {
 
-        List<String> results = new ArrayList<String>();
+        ScoreDoc[] hits = search(queryString);
+        String[] hitsString = new String[hits.length];
+
         for(int i=0;i<hits.length;++i) {
             int docId = hits[i].doc;
-            Document d = indexSearcher.doc(docId);
-            results.add(
-                    d.get(TOKENS.FILENAME_TOKEN.toString()) +
-                            ","+d.get(TOKENS.LOG_LINE_NUMBER_TOKEN.toString())+
-                            ": "+ d.get(TOKENS.LOG_LINE_TOKEN.toString()) );
+            Document doc = indexSearcher.doc(docId);
+            hitsString[i] = stringfy(doc);
         }
 
-        return results;
+        return hitsString;
+    }
+
+    public static String stringfy(Document doc){
+        return doc.get(TOKENS.FILENAME_TOKEN.toString()) +
+                ","+doc.get(TOKENS.LOG_LINE_NUMBER_TOKEN.toString())+
+                ": "+ doc.get(TOKENS.LOG_LINE_TOKEN.toString());
     }
 }
