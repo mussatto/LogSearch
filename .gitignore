@@ -44,3 +44,4 @@ proguard/
 build/
 .lazybones/
 etc/
+.DS_Store
