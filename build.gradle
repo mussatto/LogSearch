@@ -2,14 +2,28 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'maven'
+apply plugin: 'ivy-publish'
 
-project.group=projectGroup
-version = projectVersion
+sourceCompatibility = 1.7
 
-sourceCompatibility = projectSourceCompatibility
-targetCompatibility = projectSourceCompatibility
+group="com.curupira"
 
 // Include dependent libraries in archive.
+
+publishing {
+    publications {
+        ivy(IvyPublication) {
+            organisation 'com.curupira'
+            module 'logsearch'
+            revision '0.1'
+            descriptor.status = 'beta'
+            descriptor.branch = 'main'
+            descriptor.extraInfo 'https://github.com/mussatto/LogSearch', '', ''
+
+            from components.java
+        }
+    }
+}
 
 jar {
     manifest {
