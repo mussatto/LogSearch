@@ -43,4 +43,4 @@ proguard/
 .gradle/
 build/
 .lazybones/
-
+etc/
