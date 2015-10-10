@@ -10,8 +10,9 @@ import org.apache.lucene.util.Version;
 import java.io.File;
 import java.io.IOException;
 
-public class FSIndexer extends Indexer {
-    public FSIndexer(String path) {
+public class FSLogIndexer extends LogIndexer {
+
+    public FSLogIndexer(String path) {
         super(path);
     }
 

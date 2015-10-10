@@ -8,12 +8,12 @@ import java.io.IOException;
 public class FileInputter {
 
     private BufferedReader bufferedReader;
-    private Indexer indexer;
+    private LogIndexer logIndexer;
     private String path;
 
-    public FileInputter(Indexer indexer, String path) throws FileNotFoundException {
+    public FileInputter(LogIndexer logIndexer, String path) throws FileNotFoundException {
         this.bufferedReader = new BufferedReader(new FileReader(path));
-        this.indexer=indexer;
+        this.logIndexer = logIndexer;
         this.path = path;
     }
 
@@ -21,7 +21,7 @@ public class FileInputter {
         String line;
 
         while((line = bufferedReader.readLine()) != null) {
-            indexer.indexLogLine(line, path);
+            logIndexer.indexLogLine(line, path);
         }
     }
 }

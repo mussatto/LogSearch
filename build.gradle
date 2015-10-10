@@ -5,7 +5,7 @@ apply plugin: 'maven'
 apply plugin: 'ivy-publish'
 
 sourceCompatibility = 1.7
-
+version="0.1"
 group="com.curupira"
 
 // Include dependent libraries in archive.

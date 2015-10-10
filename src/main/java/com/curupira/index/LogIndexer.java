@@ -9,7 +9,7 @@ import org.apache.lucene.store.Directory;
 
 import java.io.IOException;
 
-public abstract class Indexer {
+public abstract class LogIndexer {
 
     protected final String indexPath;
 
@@ -20,16 +20,16 @@ public abstract class Indexer {
     protected long currentLogLineNumber;
 
 
-    public static Indexer createInFileSystemExisting(String indexPath){
-        return new FSIndexer(indexPath);
+    public static LogIndexer createInFileSystemExisting(String indexPath){
+        return new FSLogIndexer(indexPath);
     }
 
-    public static Indexer createInMemory(String indexPath){
+    public static LogIndexer createInMemory(String indexPath){
 
-        return new RAMIndexer(indexPath);
+        return new RAMLogIndexer(indexPath);
     }
 
-    public Indexer(String path){
+    public LogIndexer(String path){
         this.indexPath=path;
         try {
             createIndex(indexPath);

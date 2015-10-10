@@ -9,9 +9,9 @@ import org.apache.lucene.util.Version;
 
 import java.io.IOException;
 
-public class RAMIndexer extends Indexer {
+public class RAMLogIndexer extends LogIndexer {
 
-    public RAMIndexer(String path) {
+    public RAMLogIndexer(String path) {
         super(path);
     }
 
