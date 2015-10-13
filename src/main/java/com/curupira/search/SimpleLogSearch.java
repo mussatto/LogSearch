@@ -23,15 +23,11 @@ public class SimpleLogSearch implements LogSearch{
 
     private IndexSearcher indexSearcher;
 
-    private TopScoreDocCollector collector;
-
     public SimpleLogSearch(Directory directory) throws IOException {
 
         IndexReader reader = DirectoryReader.open(directory);
 
         this.indexSearcher = new IndexSearcher(reader);
-
-        this.collector = TopScoreDocCollector.create(50, true);
 
     }
 
@@ -42,6 +38,7 @@ public class SimpleLogSearch implements LogSearch{
                 analyzer)
                 .parse(queryString);
 
+        TopScoreDocCollector collector = TopScoreDocCollector.create(50, true);
         indexSearcher.search(query, collector);
 
         return collector.topDocs().scoreDocs;

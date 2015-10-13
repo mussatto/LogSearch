@@ -23,10 +23,6 @@ public class LogSearchDocument {
         return document.get(TOKENS.LOG_LINE_TOKEN.toString());
     }
 
-    public String getSearchResult(){
-        return toString();
-    }
-
     @Override
     public String toString(){
         return getFilename() +
