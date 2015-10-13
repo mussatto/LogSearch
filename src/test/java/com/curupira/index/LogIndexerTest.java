@@ -29,7 +29,7 @@ public class LogIndexerTest {
 
         for(LogSearchDocument result : results){
             System.out.println(result);
-            assertEquals(true, result.getSearchResult().toLowerCase().contains(EXCEPTION));
+            assertEquals(true, result.getLog().toLowerCase().contains(EXCEPTION));
 
         }
 
@@ -47,7 +47,7 @@ public class LogIndexerTest {
 
         for(LogSearchDocument result : results){
             System.out.println(result);
-            assertEquals(true, result.getSearchResult().toLowerCase().contains(EXCEPTION));
+            assertEquals(true, result.getLog().toLowerCase().contains(EXCEPTION));
         }
 
         logIndexer.close();
@@ -64,7 +64,7 @@ public class LogIndexerTest {
 
         for(LogSearchDocument result : results){
             System.out.println(result);
-            assertEquals(true, result.getSearchResult().toLowerCase().contains(EXCEPTION));
+            assertEquals(true, result.getLog().toLowerCase().contains(EXCEPTION));
         }
 
         logIndexer.close();
